@@ -2,33 +2,27 @@
 
             <footer id="bottom">
             	<div class="container">
-	                <div class="grid 1of3">
+	                <div class="grid 1of2">
 	                	<small>
 	                		<p>
-		                		&copy; <?php echo date('Y'); ?> <?php echo site_name(); ?>.<br />
-		                		All rights reserved.
-	                		</p>
-	                		<p>
-		                		Built with <a href="http://melodycss.co" target="_blank">Melody</a><br />
-		                		Powered by <a href="http://anchorcms.com" target="_blank">Anchor CMS</a>
+		                		&copy; <?php echo date('Y'); ?> <?php echo site_name(); ?>. All rights reserved.
 	                		</p>
 	                	</small>
 	                </div>
-
-					<div class="grid 1of3 offset-4">
+	                <div class="grid 4of12">
 						<small>
-			                <ul role="navigation">
-			                    <li><a href="<?php echo rss_url(); ?>">RSS</a></li>
-			                    <?php if(twitter_account()): ?>
-			                    <li><a href="<?php echo twitter_url(); ?>" target="_blank">@<?php echo twitter_account(); ?></a></li>
-			                    <?php endif; ?>
-
-			                    <li><a href="<?php echo base_url('admin'); ?>" title="Administer your site!">Admin area</a></li>
-
-			                    <li><a href="<?php echo base_url(); ?>" title="Return to my website.">Home</a></li>
-			                </ul>
+							<p>
+		                		Powered by <a href="http://anchorcms.com" target="_blank">Anchor CMS</a>
+	                		</p>
 			            </small>
 	        		</div>
+	                <div class="grid 1of12">
+	                	<small>
+			                <ul role="navigation">
+			                    <li><a href="<?php echo rss_url(); ?>">RSS</a></li>
+			                </ul>
+	                	</small>
+	                </div>
 	        	</div>
             </footer>
         </div>

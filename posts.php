@@ -12,10 +12,8 @@
 					</h1>
 
 					<p class="content">
-						<?php echo strip_tags(substr(article_markdown(), 0, 400)); ?>&hellip;
+						<?php echo strip_tags(substr(article_markdown(), 0, 160)); ?> <sup><a href="<?php echo article_url(); ?>" title="<?php echo article_title(); ?>" class="readmore">&hellip;</a></sup>
 					</p>
-
-					<a href="<?php echo article_url(); ?>" title="<?php echo article_title(); ?>" class="buttonlink">Read More</a>
 
 					<footer>
 						<small>

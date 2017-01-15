@@ -1,10 +1,10 @@
 /*
 	# COLORS
-	Red: #F06060
+	Red: #b2160d
 	Pink: #C38596
-	Cream: #F7F2CB
-	Plum: #774553
-	Blue: #68ADC3
+	Cream: #F9F7E8
+	Light Red: #F03F35
+	Blue: #B7E3E4
 */
 
 html, body {
@@ -16,32 +16,36 @@ html, body {
 
 a, a:visited {
 	text-decoration: none;
-	color: #68ADC3;
+	color: #B7E3E4;
 	font-weight: 700;
 }
 	*:not(nav) > a:hover {
-		text-decoration: underline;
-	}
+ 
+ 	}
 	*:not(.sidebar) > a:hover {
-		color: #68ADC3;
+		color: #B7E3E4;
 	}
 	a:not([href]) {
 		opacity: .1;
 	}
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
+	font-family: "Alegreya", "Georgia", "Times New Roman", serif;
+	color: #7E7E7E;
+}
+
+h1 {
 	font-weight: 900;
-	color: #774553;
-	font-family: "Aleo";
+	color: #F03F35;
 }
 
 h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a,
 h1 > a:visited, h2 > a:visited, h3 > a:visited, h4 > a:visited, h5 > a:visited, h6 > a:visited,
 a > h1, a > h2, a > h3, a > h4, a > h5, a > h6,
 a:visited > h1, a:visited > h2, a:visited > h3, a:visited > h4, a:visited > h5, a:visited > h6 {
-	color: #C38596;
-	font-weight: 900;
+	color: #B2160D;
 }
+
 
 hr {
 	margin: 3em 0;
@@ -79,7 +83,7 @@ hr {
 		top: 0px;
 		width: 100%;
 		margin: 0 auto;
-		padding: 1.5em 3em;
+		padding: 1.5em;
 	}
 	@media (max-width: 700px) {
 		.sidebar nav.sidebar-nav {
@@ -87,7 +91,7 @@ hr {
 		}
 	}
 	.sidebar nav.sidebar-nav a {
-		font-family: "Lato", "proxima-nova", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 		font-weight: 900;
 		margin-right: 1.5em;
 		text-transform: uppercase;
@@ -147,13 +151,14 @@ section.content {
 
 .slidey {
 	display: none;
-	background: rgba(51,71,61,0.05);
+	background: #F5F6F6;
 	width: 100%;
 	position: relative;
 	color: rgb(51,71,61);
 	max-height: 100%;
 	overflow-y: auto;
 }
+
 	@media (max-width: 1023px) {
 		.slidey {
 			width: 100%;
@@ -161,11 +166,10 @@ section.content {
 			top: 0px;
 			left: 0px;
 			z-index: 999;
-			background: #774553;
 			color: white;
 		}
 		.slidey a {
-			color: white;
+			color: #7E7E7E;
 		}
 		.slidey h5 {
 			color: white;
@@ -176,8 +180,20 @@ section.content {
 			display: none;
 		}
 	}
+
+	.slidey .container {
+		width: calc(100% - 2.25em);
+		max-width: none;
+	}
+
+		@media (max-width: 700px) {
+			.slidey .container {
+				display: flex;
+			}
+		}
+
 	.slidey a {
-		font-family: "Lato", "proxima-nova", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 		font-size: .75em;
 		text-transform: uppercase;
 	}
@@ -202,14 +218,14 @@ section.content {
 		background: #C38596;
 	}
 	#search button[type="submit"]:hover {
-		background: #68ADC3;
+		background: #B7E3E4;
 	}
 
 nav.top-nav a {
-	font-family: "Lato", "proxima-nova", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	font-weight: 900;
 	text-transform: uppercase;
-	color: #774553;
+	color: #7E7E7E;
 	margin-right: 1.5em;
 	padding-bottom: .25em;
 	margin-bottom: .75em;
@@ -219,20 +235,23 @@ nav.top-nav a {
 	border-bottom: 5px solid transparent;
 }
 	nav.top-nav a:not(.menu):hover {
-		border-bottom: 5px solid #C38596;
+		border-bottom: 5px solid #F03F35;
 	}
 	nav.sidebar-nav a:not(.menu):hover {
 		border-bottom: 5px solid white;
 	}
-	nav.top-nav a.current, nav.top-nav a.menu:hover {
-		color: #C38596;
+	nav.top-nav a.current, nav.top-nav {
+		color: #7E7E7E;
 	}
+	nav.top-nav a.current, nav.top-nav a.menu:hover {
+		color: #F03F35;
+	}	
 	nav a.menu {
 		float: right;
 	}
 	@media (max-width: 1023px) {
 		nav.top-nav a {
-			display: none !important;
+			/*display: none !important;*/
 		}
 	}
 	@media (min-width: 1024px) {
@@ -246,31 +265,31 @@ nav.top-nav a {
 	letter-spacing: -.4em !important;
 }
 
-aside.tldr p {
+aside.tldr h3 {
 	font-style: italic;
-	color: rgba(51,71,61,0.5);
-	padding-left: 3em;
+	color: #E7E7E7;
+	padding-left: 2em;
 	position: relative;
 }
-	aside.tldr p:before {
-		content: 'TL;DR -';
+	aside.tldr h3:before {
+		content: 'TL;DR \2014';
 		position: absolute;
 		top: 0;
 		left: 0;
-		font-size: .6em;
-		font-family: "Lato", "proxima-nova", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-		font-style: normal;
+		letter-spacing: 1px;
+		font-size: .5em;
+		font-family: "Alegreya", "Georgia", "Times New Roman", serif;
+		font-style: italic;
 		font-weight: 900;
-		color: #C38596;
+		color: #F03F35;
 		white-space: nowrap;
-		padding-top: .1em;
 	}
 
 a.buttonlink, a[title="pdf"], a[title="file"], a[title="audio"], a[title="button"], button {
-	background: #774553;
+	background: #F03F35;
 	padding: .25em 1.5em .3em;
 	border-radius: 3px;
-	font-family: "Lato", "proxima-nova", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	font-size: .75em;
 	color: white;
 	margin: .75em 0;
@@ -283,12 +302,26 @@ a.buttonlink, a[title="pdf"], a[title="file"], a[title="audio"], a[title="button
 	     -o-transition: background .15s ease-in-out;
 	        transition: background .15s ease-in-out;
 }
+
+a.readmore {
+	background: #E7E7E7;
+	border-radius: .2em;
+	line-height: 1;
+	margin-left: .15em;
+	padding: 0 .5em .5em;
+	vertical-align: top;
+}
+
+a.readmore:hover {
+	background: #F03F35;
+}
+
 button {
 	height: auto;
 	padding: .75em 1.5em;
 }
 	a.buttonlink:hover, a[title="pdf"]:hover, a[title="file"]:hover, a[title="audio"]:hover, a[title="button"]:hover, button:hover {
-		background: #68ADC3;
+		background: #B7E3E4;
 		color: white;
 	}
 	a[title="pdf"], a[title="file"], a[title="audio"], section.comments button {
@@ -323,7 +356,7 @@ footer#bottom {
 	border-top: 1px solid rgba(51,71,61,0.05);
 }
 	/*footer#bottom ul a {
-		font-family: "Lato", "proxima-nova", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 		font-size: .75em;
 	}*/
 
@@ -347,24 +380,24 @@ section.content ul:not(.items):not(.commentlist) li:before {
 }
 /*section.content ul {
 	list-style: circle inside;
-	list-style-color: #774553;
+	list-style-color: #F03F35;
 }*/
 
 section.content ol {
 	list-style: lower-roman outside;
-	list-style-color: #774553;
+	list-style-color: #F03F35;
 	margin-left: 3em;
 }
 
 section.content ol li {
-	font-family: "Lato", "proxima-nova", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	color: #C38596;
 	font-size: .75em;
 	font-weight: 700;
 }
 
 section.content ol li > p {
-	font-family: "Aleo", "Skolar", "Georgia", "Times New Roman", serif;
+	font-family: "Work Sans", "Skolar", "Georgia", "Times New Roman", serif;
 	color: rgb(51,71,61);
 	font-size: 1rem;
 	font-weight: 400;
@@ -372,10 +405,13 @@ section.content ol li > p {
 }
 
 section.content blockquote {
+	font-family: "Alegreya", "Georgia", "Times New Roman", serif;
+	font-size: 1.25em;
 	font-style: italic;
-	color: rgba(51,71,61,0.5);
-	padding-left: 1.5em;
-	border-left: 5px solid #C38596;
+	color: #7E7E7E;
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 5px solid #F03F35;
 }
 
 section.content .image-wrapper {
@@ -432,7 +468,7 @@ section.content .image-wrapper figcaption {
 }
 
 blockquote cite {
-	font-family: "Lato", "proxima-nova", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	font-style: normal;
 	font-size: .75em;
 	color: rgb(51,71,61);
@@ -446,7 +482,7 @@ pre {
 	margin-bottom: 1.5em;
 	white-space: pre-wrap;
 	display: block;
-	color: #774553;
+	color: #F03F35;
 	padding: .75em 1.5em;
 	border-radius: 3px;
 }
@@ -531,48 +567,6 @@ ul.commentlist li {
 		display: none;
 	}
 	.ie a:hover {
-		color: #68ADC3;
+		color: #B7E3E4;
 	}
-}
-
-@font-face {
-    font-family: 'Aleo';
-    src: url('../fonts/aleo/Aleo-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Aleo';
-    src: url('../fonts/aleo/Aleo-LightItalic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Aleo';
-    src: url('../fonts/aleo/Aleo-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Aleo';
-    src: url('../fonts/aleo/Aleo-Italic.woff') format('woff');
-    font-weight: 400;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Aleo';
-    src: url('../fonts/aleo/Aleo-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Aleo';
-    src: url('../fonts/aleo/Aleo-BoldItalic.woff') format('woff');
-    font-weight: 700;
-    font-style: italic;
 }

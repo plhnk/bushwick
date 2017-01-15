@@ -1,13 +1,12 @@
 <?php theme_include('header'); ?>
 
 		<section class="grid 1of1 content" id="article-<?php echo article_id(); ?>">
-			<h1><?php echo article_title(); ?></h1>
 
 			<?php if (article_description()): ?>
 			<aside class="tldr">
-				<p>
+				<h3>
 					<?php echo article_description(); ?>
-				</p>
+				</h3>
 			</aside>
 			<?php endif ?>
 
@@ -17,15 +16,15 @@
 
 			<section class="footnote">
 				<!-- Unfortunately, CSS means everything's got to be inline. -->
-				<p><small>This article is my <?php echo numeral(article_id()); ?> oldest. It is <?php echo count_words(article_markdown()); ?> words long<?php if(comments_open()): ?>, and it’s got <?php echo total_comments() . pluralise(total_comments(), ' comment'); ?> for now.<?php endif; ?> <?php echo article_custom_field('attribution'); ?></small></p>
+				<p><small>This is my <?php echo numeral(article_id()); ?> article. It is <?php echo count_words(article_markdown()); ?> words long<?php if(comments_open()): ?>, and it’s got <?php echo total_comments() . pluralise(total_comments(), ' comment'); ?> for now.<?php endif; ?> <?php echo article_custom_field('attribution'); ?></small></p>
 			</section>
 		</section>
 
 		<?php if(comments_open()): ?>
 		<section class=" grid 1of1 content comments">
-			<h3>Comments</h3>
 
 			<?php if(has_comments()): ?>
+			<h3>Comments</h3>
 			<ul class="commentlist">
 				<?php $i = 0; while(comments()): $i++; ?>
 				<li class="comment" id="comment-<?php echo comment_id(); ?>">
@@ -57,12 +56,12 @@
 
 				<p class="email">
 					<label for="email">Your email address:</label>
-					<?php echo comment_form_input_email('placeholder="Your email (won’t be published)"'); ?>
+					<?php echo comment_form_input_email('placeholder="Your email won’t be published"'); ?>
 				</p>
 
 				<p class="textarea">
 					<label for="text">Your comment:</label>
-					<?php echo comment_form_input_text('placeholder="Your comment"'); ?>
+					<?php echo comment_form_input_text('placeholder="If you can&#8217;t say something nice..."'); ?>
 				</p>
 
 				<p class="submit">

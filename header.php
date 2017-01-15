@@ -8,12 +8,11 @@
 
 		<link rel="stylesheet" href="<?php echo theme_url('/css/melody.css'); ?>">
 		<link rel="stylesheet" href="<?php echo theme_url('/css/style.css'); ?>">
-		<!--<link rel="stylesheet" href="<?php echo theme_url('/fonts/merriweather-fontfacekit/stylesheet.css'); ?>">-->
 
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo rss_url(); ?>">
 		<link rel="shortcut icon" href="<?php echo theme_url('img/favicon.png'); ?>">
 
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic,900' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Alegreya:400,400i,900,900i|Work+Sans:400,900' rel='stylesheet' type='text/css'>
 
 
 
@@ -146,28 +145,17 @@
 
 		<div class="sidebar">
 			<nav class="grid 1of1 sidebar-nav">
-				<a href="<?php echo base_url(); ?>" class="home <?php echo (is_homepage() ? 'current' : '') ?>">HOME</a>
-
-				<?php echo $latestPostLink; ?>
-
-				<?php if(has_menu_items()): ?>
-					<?php while(menu_items()): ?>
-						<a href="<?php echo menu_url(); ?>" class="<?php echo (menu_active() ? 'current' : '') ?>" title="<?php echo menu_title(); ?>"><?php echo menu_name(); ?>
-						</a>
-					<?php endwhile; ?>
-				<?php endif; ?>
-
-				<a href="#menu" class="menu icon">M</a>
+				<a href="#menu" class="menu">Menu</a>
 			</nav>
 
 			<div class="container">
 				<div class="grid 1of1 sidebar-content force-grid">
 					<?php if(article_title()): ?>
 						<h1><?php echo article_title(); ?></h1>
-						<p class="grid 3of4 stick-to-grid remove-padding">
+						<h5 class="grid 3of4 stick-to-grid remove-padding">
 							<?php echo article_author('real_name'); ?><br />
 							<?php echo article_date(); ?>
-						</p>
+						</h5>
 						<p class="grid 1of4 stick-to-grid remove-padding ralign article-links">
 							<a<?php echo (article_previous_url() ? ' href="' . article_previous_url() . '"' : ''); ?>>&larr;</a>
 							<a<?php echo (article_next_url() ? ' href="' . article_next_url() . '"' : ''); ?>>&rarr;</a>
@@ -184,31 +172,18 @@
 
 			<div class="slidey">
 				<div class="container">
-					<aside class="grid 1of2 search">
-						<h5>Search</h5>
+					<nav class="grid 5of6 top-nav">
+					    <?php echo $latestPostLink; ?>
 
-						<form id="search" action="<?php echo search_url(); ?>" method="post">
-							<label for="term">Search my blog:</label>
-							<input type="text" id="term" name="term" placeholder="<?php echo (search_term() ? search_term() : 'To search, type and hit enter&hellip;'); ?>" />
-							<button type="submit" value="Go">Go</button>
-						</form>
-					</aside>
+						<?php if(has_menu_items()): ?>
+							<?php while(menu_items()): ?>
+								<a href="<?php echo menu_url(); ?>" class="<?php echo (menu_active() ? 'current' : '') ?>" title="<?php echo menu_title(); ?>"><?php echo menu_name(); ?></a>
+							<?php endwhile; ?>
+						<?php endif; ?>
+					</nav>
 
-					<aside class="grid 1of2 categories">
-						<h5>Categories</h5>
-
-						<ul>
-						<?php while(categories()): ?>
-							<li>
-								<a href="<?php echo category_url(); ?>" title="<?php echo category_title(); ?>"><?php echo category_title(); ?></a>
-								<small><?php echo category_count(); ?></small>
-							</li>
-						<?php endwhile; ?>
-						</ul>
-					</aside>
-
-					<div class="grid 1of1 ralign">
-						<a href="#menu" class="menu icon">M</a>
+					<div class="grid 1of6 ralign">
+						<a href="#menu" class="menu">Menu</a>
 					</div>
 
 				</div>
@@ -224,15 +199,7 @@
 			<header id="top">
 				<div class="container">
 					<nav class="grid 1of1 top-nav">
-					    <?php echo $latestPostLink; ?>
-
-						<?php if(has_menu_items()): ?>
-							<?php while(menu_items()): ?>
-								<a href="<?php echo menu_url(); ?>" class="<?php echo (menu_active() ? 'current' : '') ?>" title="<?php echo menu_title(); ?>"><?php echo menu_name(); ?></a>
-							<?php endwhile; ?>
-						<?php endif; ?>
-
-						<a href="#menu" class="menu icon">M</a>
+						<a href="#menu" class="menu">Menu</a>
 					</nav>
 				</div>
 			</header>
