@@ -12,7 +12,7 @@
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo rss_url(); ?>">
 		<link rel="shortcut icon" href="<?php echo theme_url('img/favicon.png'); ?>">
 
-		<link href='http://fonts.googleapis.com/css?family=Alegreya:400,400i,900,900i|Work+Sans:400,900' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Alegreya:400,400i,700i,900,900i|Work+Sans:400,900' rel='stylesheet' type='text/css'>
 
 
 
@@ -36,79 +36,27 @@
     		<script><?php echo article_js(); ?></script>
 		<?php endif; ?>
 
-		<style>
-			.sidebar {
-				background: url("<?php echo theme_url('img/sidebar-bg2.jpg'); ?>") center no-repeat;
-				background-size: cover;
-				color: white;
-				text-shadow: 0px 1px 5px rgba(0,0,0,0.3);
-			}
-				.sidebar a {
-					color: white;
-				}
-				.sidebar a.current {
-					color: #F7F2CB;
-				}
-		</style>
 		<?php if (($img = article_custom_field('sidebar_image')) || ($img = page_custom_field('sidebar_image'))): ?>
 			<style>
 				.sidebar {
 					background: url("<?php echo $img; ?>") center no-repeat;
-					background-size: cover;
-					color: white;
-					text-shadow: 0px 1px 5px rgba(0,0,0,0.3);
-				}
-				.sidebar a {
-					color: white;
-				}
-				.sidebar a.current {
-					color: #F7F2CB;
 				}
 			</style>
 		<?php elseif(is_article()): ?>
-			<style>
-				.sidebar {
-					background: rgba(51,71,61,0.05);
-					color: rgb(51,71,61);
-					text-shadow: 0px 0px 0px transparent;
-				}
-				.sidebar a, .sidebar h1, .sidebar h4 {
-					color: #774553;
-				}
-				.sidebar a.current {
-					color: #C38596;
-				}
-			</style>
+			
 		<?php elseif (page_slug() == 'search'): ?>
 			<style>
 				.sidebar {
 					background: url("<?php echo theme_url('img/search-bg.jpg'); ?>") center no-repeat;
-					background-size: cover;
-					color: white;
-					text-shadow: 0px 1px 5px rgba(0,0,0,0.3);
-				}
-				.sidebar a:hover {
-					color: #F7F2CB;
 				}
 			</style>
 		<?php elseif (!page_title()): ?>
 			<style>
 				.sidebar {
 					background: url("<?php echo theme_url('img/404-bg.jpg'); ?>") center no-repeat;
-					background-size: cover;
-					color: white;
-					text-shadow: 0px 1px 5px rgba(0,0,0,0.3);
-				}
-				.sidebar a:hover {
-					color: #F7F2CB;
 				}
 			</style>
 		<?php else: ?>
-			<style>
-				.sidebar a:hover {
-					color: #F7F2CB;
-				}
-			</style>
 			<?php
 				/*$i = 1;
 				while(file_exists($_SERVER['DOCUMENT_ROOT'] . base_url() . 'content/sidebar-images/bg' . $i . '.jpg')) {
@@ -144,10 +92,6 @@
 	<body>
 
 		<div class="sidebar">
-			<nav class="grid 1of1 sidebar-nav">
-				<a href="#menu" class="menu">Menu</a>
-			</nav>
-
 			<div class="container">
 				<div class="grid 1of1 sidebar-content force-grid">
 					<?php if(article_title()): ?>
@@ -169,10 +113,9 @@
 		</div>
 
 		<div class="main">
-
 			<div class="slidey">
 				<div class="container">
-					<nav class="grid 5of6 top-nav">
+					<nav class="grid 1of1">
 					    <?php echo $latestPostLink; ?>
 
 						<?php if(has_menu_items()): ?>
@@ -182,26 +125,12 @@
 						<?php endif; ?>
 					</nav>
 
-					<div class="grid 1of6 ralign">
-						<a href="#menu" class="menu">Menu</a>
-					</div>
-
 				</div>
 			</div>
-			<!--<div class="tray">
-				<div class="container">
-					<div class="grid 1of2 search"></div>
-
-					<div class="grid 1of2 categories"></div>
-				</div>
-			</div>-->
-
 			<header id="top">
-				<div class="container">
-					<nav class="grid 1of1 top-nav">
-						<a href="#menu" class="menu">Menu</a>
-					</nav>
-				</div>
+				<nav class="top-nav">
+					<a href="#menu" class="menu">Menu</a>
+				</nav>
 			</header>
 
 			<div class="container">

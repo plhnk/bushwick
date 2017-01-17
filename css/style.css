@@ -10,7 +10,7 @@
 html, body {
 	width: 100%;
 	height: 100%;
-	color: rgb(51,71,61);
+	color: #777;
 	position: relative;
 }
 
@@ -36,14 +36,13 @@ h2, h3, h4, h5, h6 {
 
 h1 {
 	font-weight: 900;
-	color: #F03F35;
 }
 
 h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a,
 h1 > a:visited, h2 > a:visited, h3 > a:visited, h4 > a:visited, h5 > a:visited, h6 > a:visited,
 a > h1, a > h2, a > h3, a > h4, a > h5, a > h6,
 a:visited > h1, a:visited > h2, a:visited > h3, a:visited > h4, a:visited > h5, a:visited > h6 {
-	color: #B2160D;
+	color: #F03F35;
 }
 
 
@@ -66,7 +65,19 @@ hr {
 
 .sidebar {
 	left: 0px;
+	background: #B7E3E4 url('../img/sidebar-bg2.jpg') center no-repeat;
+	background-size: cover;
+	color: white;
+	text-shadow: 0px .1em 2em rgba(0,0,0,0.2);
 }
+
+	.sidebar a {
+		color: white;
+				}
+	.sidebar a.current {
+					color: #F7F2CB;
+				}
+
 	.sidebar > .container {
 		position: absolute;
 		bottom: 3em;
@@ -153,28 +164,21 @@ section.content {
 	display: none;
 	background: #F5F6F6;
 	width: 100%;
-	position: relative;
+	position: fixed;
 	color: rgb(51,71,61);
 	max-height: 100%;
 	overflow-y: auto;
+	top: 0;
+	left: 40%;
+	z-index:999;
 }
 
 	@media (max-width: 1023px) {
 		.slidey {
-			width: 100%;
-			position: fixed;
-			top: 0px;
-			left: 0px;
-			z-index: 999;
-			color: white;
+			left: 0;
 		}
-		.slidey a {
-			color: #7E7E7E;
-		}
-		.slidey h5 {
-			color: white;
-		}
-	}
+	} 
+
 	@media (min-width: 1024px) {
 		.slidey a.menu {
 			display: none;
@@ -189,6 +193,9 @@ section.content {
 		@media (max-width: 700px) {
 			.slidey .container {
 				display: flex;
+			}
+			.slidey a {
+			display: block;
 			}
 		}
 
@@ -221,18 +228,29 @@ section.content {
 		background: #B7E3E4;
 	}
 
+
+#top {
+	margin-bottom: 4em;
+}
+
+nav.top-nav {
+	position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+
 nav.top-nav a {
 	font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	font-weight: 900;
 	text-transform: uppercase;
 	color: #7E7E7E;
-	margin-right: 1.5em;
-	padding-bottom: .25em;
-	margin-bottom: .75em;
+	margin: 1.5em;
 	font-size: .75em;
 	white-space: nowrap;
 	display: inline-block;
 	border-bottom: 5px solid transparent;
+	transition: all .3s ease-in-out;
 }
 	nav.top-nav a:not(.menu):hover {
 		border-bottom: 5px solid #F03F35;
@@ -244,14 +262,31 @@ nav.top-nav a {
 		color: #7E7E7E;
 	}
 	nav.top-nav a.current, nav.top-nav a.menu:hover {
+	
+	}
+	nav.top-nav a.menu.current {
+		transform: rotateZ(45deg);
 		color: #F03F35;
 	}	
-	nav a.menu {
-		float: right;
+
+	nav.top-nav a.menu.current::after {
+		display: block;
+		content: '';
+		position: absolute;
+		background: #B2160D;
+		background: linear-gradient(to right, #F03F35,#F03F35 33%,transparent 33%,transparent 67%,#F03F35 67%);
+		height: .75em;
+		width: 100%;
+		top: .6em;
+		transform: rotateZ(90deg);
+		left: 0;
+		z-index: -1;
 	}
 	@media (max-width: 1023px) {
 		nav.top-nav a {
-			/*display: none !important;*/
+		color: #FFF;
+		text-shadow: 0px 0.1em 4em rgba(0,0,0,0.4);
+		margin: 2em;
 		}
 	}
 	@media (min-width: 1024px) {
@@ -267,7 +302,7 @@ nav.top-nav a {
 
 aside.tldr h3 {
 	font-style: italic;
-	color: #E7E7E7;
+	font-weight: 700;
 	padding-left: 2em;
 	position: relative;
 }
@@ -278,8 +313,6 @@ aside.tldr h3 {
 		left: 0;
 		letter-spacing: 1px;
 		font-size: .5em;
-		font-family: "Alegreya", "Georgia", "Times New Roman", serif;
-		font-style: italic;
 		font-weight: 900;
 		color: #F03F35;
 		white-space: nowrap;

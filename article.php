@@ -14,10 +14,6 @@
 				<?php echo article_markdown(); ?>
 			</article>
 
-			<section class="footnote">
-				<!-- Unfortunately, CSS means everything's got to be inline. -->
-				<p><small>This is my <?php echo numeral(article_id()); ?> article. It is <?php echo count_words(article_markdown()); ?> words long<?php if(comments_open()): ?>, and it’s got <?php echo total_comments() . pluralise(total_comments(), ' comment'); ?> for now.<?php endif; ?> <?php echo article_custom_field('attribution'); ?></small></p>
-			</section>
 		</section>
 
 		<?php if(comments_open()): ?>
