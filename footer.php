@@ -1,28 +1,21 @@
             </div>
 
             <footer id="bottom">
-            	<div class="container">
-	                <div class="grid 1of2">
+            	<div class="flex container">
+	                <div class="grid 2of3">
 	                	<small>
 	                		<p>
 		                		&copy; <?php echo date('Y'); ?> <?php echo site_name(); ?>. All rights reserved.
 	                		</p>
 	                	</small>
 	                </div>
-	                <div class="grid 4of12">
+	                <div class="grid 1of3 ralign">
 						<small>
 							<p>
 		                		Powered by <a href="http://anchorcms.com" target="_blank">Anchor CMS</a>
 	                		</p>
 			            </small>
 	        		</div>
-	                <div class="grid 1of12">
-	                	<small>
-			                <ul role="navigation">
-			                    <li><a href="<?php echo rss_url(); ?>">RSS</a></li>
-			                </ul>
-	                	</small>
-	                </div>
 	        	</div>
             </footer>
         </div>

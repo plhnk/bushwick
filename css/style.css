@@ -16,14 +16,13 @@ html, body {
 
 a, a:visited {
 	text-decoration: none;
-	color: #B7E3E4;
-	font-weight: 700;
 }
+
 	*:not(nav) > a:hover {
  
  	}
 	*:not(.sidebar) > a:hover {
-		color: #B7E3E4;
+		color: #F03F35;
 	}
 	a:not([href]) {
 		opacity: .1;
@@ -34,7 +33,7 @@ h2, h3, h4, h5, h6 {
 	color: #7E7E7E;
 }
 
-h1 {
+h1, nav a, aside.tldr h3:before  {
 	font-weight: 900;
 }
 
@@ -65,7 +64,9 @@ hr {
 
 .sidebar {
 	left: 0px;
-	background: #B7E3E4 url('../img/sidebar-bg2.jpg') center no-repeat;
+	background-color: #B7E3E4;
+	background-position: center;
+	background-repeat: no-repeat;
 	background-size: cover;
 	color: white;
 	text-shadow: 0px .1em 2em rgba(0,0,0,0.2);
@@ -89,30 +90,6 @@ hr {
 			left: 0;
 		}
 	}
-	.sidebar nav.sidebar-nav {
-		position: absolute;
-		top: 0px;
-		width: 100%;
-		margin: 0 auto;
-		padding: 1.5em;
-	}
-	@media (max-width: 700px) {
-		.sidebar nav.sidebar-nav {
-			padding: 1.5em;
-		}
-	}
-	.sidebar nav.sidebar-nav a {
-		font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-		font-weight: 900;
-		margin-right: 1.5em;
-		text-transform: uppercase;
-		padding-bottom: .25em;
-		font-size: .75em;
-		white-space: nowrap;
-		margin-bottom: .75em;
-		display: inline-block;
-		border-bottom: 5px solid transparent;
-	}
 	.article-links {
 		font-weight: 900;
 		font-size: 2em;
@@ -124,15 +101,6 @@ hr {
 		color: white;
 	}
 
-@media (max-width: 1023px) {
-	nav.sidebar-nav {
-		/*padding-right: 6em !important;
-		margin-right: -6em !important;*/
-		-webkit-box-sizing: border-box;
-		   -moz-box-sizing: border-box;
-		        box-sizing: border-box;
-	}
-}
 @media (min-width: 1024px) {
 	.sidebar, .main {
 		position: absolute;
@@ -165,7 +133,6 @@ section.content {
 	background: #F5F6F6;
 	width: 100%;
 	position: fixed;
-	color: rgb(51,71,61);
 	max-height: 100%;
 	overflow-y: auto;
 	top: 0;
@@ -186,7 +153,7 @@ section.content {
 	}
 
 	.slidey .container {
-		width: calc(100% - 2.25em);
+		width: 100%;
 		max-width: none;
 	}
 
@@ -200,7 +167,6 @@ section.content {
 		}
 
 	.slidey a {
-		font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 		font-size: .75em;
 		text-transform: uppercase;
 	}
@@ -233,43 +199,36 @@ section.content {
 	margin-bottom: 4em;
 }
 
-nav.top-nav {
+nav a {
+	color: #7E7E7E;
+}
+
+nav.grid a {
+	margin: 1em;
+}
+
+nav.menu-toggle {
 	position: fixed;
     right: 0;
     top: 0;
     z-index: 999;
 }
 
-nav.top-nav a {
-	font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	font-weight: 900;
+nav.menu-toggle a {
+	font-family: "Work Sans", "Verdana", "Tahoma", sans-serif;
 	text-transform: uppercase;
-	color: #7E7E7E;
-	margin: 1.5em;
+	margin: 2em;
 	font-size: .75em;
 	white-space: nowrap;
 	display: inline-block;
-	border-bottom: 5px solid transparent;
 	transition: all .3s ease-in-out;
 }
-	nav.top-nav a:not(.menu):hover {
-		border-bottom: 5px solid #F03F35;
-	}
-	nav.sidebar-nav a:not(.menu):hover {
-		border-bottom: 5px solid white;
-	}
-	nav.top-nav a.current, nav.top-nav {
-		color: #7E7E7E;
-	}
-	nav.top-nav a.current, nav.top-nav a.menu:hover {
-	
-	}
-	nav.top-nav a.menu.current {
+	nav.menu-toggle a.menu.current {
 		transform: rotateZ(45deg);
 		color: #F03F35;
 	}	
 
-	nav.top-nav a.menu.current::after {
+	nav.menu-toggle a.menu.current::after {
 		display: block;
 		content: '';
 		position: absolute;
@@ -283,15 +242,10 @@ nav.top-nav a {
 		z-index: -1;
 	}
 	@media (max-width: 1023px) {
-		nav.top-nav a {
+		nav.menu-toggle a {
 		color: #FFF;
 		text-shadow: 0px 0.1em 4em rgba(0,0,0,0.4);
 		margin: 2em;
-		}
-	}
-	@media (min-width: 1024px) {
-		nav.sidebar-nav a:not(.home) {
-			display: none;
 		}
 	}
 
@@ -313,7 +267,6 @@ aside.tldr h3 {
 		left: 0;
 		letter-spacing: 1px;
 		font-size: .5em;
-		font-weight: 900;
 		color: #F03F35;
 		white-space: nowrap;
 	}
@@ -388,10 +341,10 @@ button {
 footer#bottom {
 	border-top: 1px solid rgba(51,71,61,0.05);
 }
-	/*footer#bottom ul a {
-		font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-		font-size: .75em;
-	}*/
+
+.flex {
+	display: flex;
+}
 
 .remove-bottom {
 	margin-bottom: 0;
@@ -592,9 +545,6 @@ ul.commentlist li {
 	.ie .main {
 		width: 60%;
 		right: 0px;
-	}
-	.ie nav.sidebar-nav a:not(.home) {
-		display: none;
 	}
 	.ie .slidey a.menu {
 		display: none;

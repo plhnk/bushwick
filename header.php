@@ -1,3 +1,10 @@
+<?php
+  $bg = array('bg-01.jpg', 'bg-02.jpg', 'bg-03.jpg', 'bg-04.jpg', 'bg-05.jpg', 'bg-06.jpg', 'bg-07.jpg', 'bg-08.jpg', 'bg-09.jpg', 'bg-10.jpg', 'bg-11.jpg', 'bg-12.jpg', 'bg-13.jpg', 'bg-14.jpg', 'bg-15.jpg', 'bg-16.jpg' ); // array of filenames
+
+  $i = rand(0, count($bg)-1); // generate random number size of the array
+  $selectedBg = "$bg[$i]"; // set variable equal to which random filename was chosen
+?>
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -39,12 +46,12 @@
 		<?php if (($img = article_custom_field('sidebar_image')) || ($img = page_custom_field('sidebar_image'))): ?>
 			<style>
 				.sidebar {
-					background: url("<?php echo $img; ?>") center no-repeat;
+					background-image: url("<?php echo $img; ?>");
 				}
 			</style>
 		<?php elseif(is_article()): ?>
-			
-		<?php elseif (page_slug() == 'search'): ?>
+		
+		<?php /*elseif (page_slug() == 'search'): ?>
 			<style>
 				.sidebar {
 					background: url("<?php echo theme_url('img/search-bg.jpg'); ?>") center no-repeat;
@@ -55,7 +62,7 @@
 				.sidebar {
 					background: url("<?php echo theme_url('img/404-bg.jpg'); ?>") center no-repeat;
 				}
-			</style>
+			</style> 
 		<?php else: ?>
 			<?php
 				/*$i = 1;
@@ -85,8 +92,13 @@
 				href="' . $latestPostURL . '"
 				class="latest-post ' . ($latestPostURL == $_SERVER['REQUEST_URI'] ? 'current' : '') . '"
 				title="' . latest_post()->data['title'] . '"
-				>Latest Post</a>';
+				>Latest</a>';
 		?>
+		<style type="text/css">
+			.sidebar {
+				background-image: url(/images/backgrounds/<?php echo $selectedBg; ?>);
+			}
+		</style>
 	</head>
 
 	<body>
@@ -105,7 +117,7 @@
 							<a<?php echo (article_next_url() ? ' href="' . article_next_url() . '"' : ''); ?>>&rarr;</a>
 						</p>
 					<?php else: ?>
-						<h1><?php echo site_name(); ?></h1>
+						<h1>Eero</h1>
 						<p><?php echo site_description(); ?></p>
 					<?php endif; ?>
 				</div>
@@ -116,19 +128,19 @@
 			<div class="slidey">
 				<div class="container">
 					<nav class="grid 1of1">
-					    <?php echo $latestPostLink; ?>
-
 						<?php if(has_menu_items()): ?>
 							<?php while(menu_items()): ?>
 								<a href="<?php echo menu_url(); ?>" class="<?php echo (menu_active() ? 'current' : '') ?>" title="<?php echo menu_title(); ?>"><?php echo menu_name(); ?></a>
 							<?php endwhile; ?>
 						<?php endif; ?>
+
+						<?php echo $latestPostLink; ?>
 					</nav>
 
 				</div>
 			</div>
 			<header id="top">
-				<nav class="top-nav">
+				<nav class="menu-toggle">
 					<a href="#menu" class="menu">Menu</a>
 				</nav>
 			</header>
