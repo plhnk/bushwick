@@ -14,6 +14,11 @@ html, body {
 	position: relative;
 }
 
+.light {
+	color: white;
+	text-shadow: 0px .1em 2em rgba(0,0,0,0.2);
+}
+
 a, a:visited {
 	text-decoration: none;
 }
@@ -68,8 +73,6 @@ hr {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	color: white;
-	text-shadow: 0px .1em 2em rgba(0,0,0,0.2);
 }
 
 	.sidebar a {
@@ -96,9 +99,6 @@ hr {
 	}
 	.article-links a:hover {
 		text-decoration: none;
-	}
-	.sidebar h1, .sidebar h4 {
-		color: white;
 	}
 
 @media (min-width: 1024px) {
@@ -337,6 +337,26 @@ button {
 		top: .8em;
 		left: 1.25em;
 	}
+
+.play-button {
+	background-color: transparent;
+	border: none;
+	fill: #fff;
+	height: 2em;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+	width: 2em;
+}
+
+.play-button:focus {
+    outline: none;
+}
+
+.play-button:hover {
+	background-color: transparent;
+	cursor: pointer;
+}
 
 footer#bottom {
 	border-top: 1px solid rgba(51,71,61,0.05);

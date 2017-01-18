@@ -2,17 +2,17 @@
 
             <footer id="bottom">
             	<div class="flex container">
-	                <div class="grid 2of3">
+	                <div class="grid 1of2">
 	                	<small>
 	                		<p>
-		                		&copy; <?php echo date('Y'); ?> <?php echo site_name(); ?>. All rights reserved.
+		                		&copy; <?php echo date('Y'); ?> <?php echo site_name(); ?>. All&nbsp;rights&nbsp;reserved.
 	                		</p>
 	                	</small>
 	                </div>
-	                <div class="grid 1of3 ralign">
+	                <div class="grid 1of2 ralign">
 						<small>
 							<p>
-		                		Powered by <a href="http://anchorcms.com" target="_blank">Anchor CMS</a>
+		                		Powered by <s><a href="http://anchorcms.com" target="_blank">Anchor CMS</a></s> <a href="http://liferay.com" target="_blank">Liferay DXP</a>
 	                		</p>
 			            </small>
 	        		</div>
@@ -62,6 +62,58 @@
 					}
 				});
 	    	});
+			var pause = "M10,8.5 L20,14.26 20,25.74 10,31.5 M20,14.26 L30,20 30,20 20,25.74",
+				play = "M 10 10 L 18 10 L 18 30 L 10 30 M 22 10 L 30 10 L 30 30 L 22 30",
+				$animation = $('#animation');
+			$pronounciation = $('#pronounciation');
+
+			var getaudio = $('#pronounciation')[0];
+			/* Get the audio from the player (using the player's ID), the [0] is necessary */
+
+			var audiostatus = 'off';
+			/* Global variable for the audio's status (off or on). It's a bit crude but it works for determining the status. */
+
+			$(document).on('click touchend', '.play-button', function() {
+				/* Touchend is necessary for mobile devices, click alone won't work */
+					if (audiostatus == 'off') {
+						$animation.attr({
+								"from": pause,
+								"to": play
+							})
+							.get(0).beginElement();
+						getaudio.load();
+						getaudio.play();
+						audiostatus = 'on';
+						return false;
+					if (audiostatus == 'on') {
+						$animation.attr({
+								"from": play,
+								"to": pause
+							})
+							.get(0).beginElement();
+						getaudio.play();
+					}
+				}
+			});
+
+			$('#pronounciation').on('ended', function() {
+				$animation.attr({
+						"from": play,
+						"to": pause
+					})
+					.get(0).beginElement();
+				/*When the audio has finished playing, change the button*/
+				audiostatus = 'off';
+				/*Set the status back to off*/
+			});
+
+			$(".convert-emoji").each(function() {
+            var original = $(this).html();
+            // use .shortnameToImage if only converting shortnames (for slightly better performance)
+            var converted = emojione.toImage(original);
+            $(this).html(converted);
+        	});
+
 	    </script>
 
 		<!--[if lt IE 9]>
