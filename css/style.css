@@ -62,8 +62,8 @@ hr {
 	width: 100%;
 	display: inline-block;
 	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
+		moz-box-sizing: border-box;
+		 box-sizing: border-box;
 	min-height: 100%;
 }
 
@@ -209,9 +209,9 @@ nav.grid a {
 
 nav.menu-toggle {
 	position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 999;
+	right: 0;
+	top: 0;
+	z-index: 999;
 }
 
 nav.menu-toggle a {
@@ -283,10 +283,10 @@ a.buttonlink, a[title="pdf"], a[title="file"], a[title="audio"], a[title="button
 	border: 0;
 	font-weight: 400;
 	-webkit-transition: background .15s ease-in-out;
-	   -moz-transition: background .15s ease-in-out;
-	    -ms-transition: background .15s ease-in-out;
-	     -o-transition: background .15s ease-in-out;
-	        transition: background .15s ease-in-out;
+		moz-transition: background .15s ease-in-out;
+		-ms-transition: background .15s ease-in-out;
+		 -o-transition: background .15s ease-in-out;
+		 transition: background .15s ease-in-out;
 }
 
 a.readmore {
@@ -350,7 +350,7 @@ button {
 }
 
 .play-button:focus {
-    outline: none;
+	outline: none;
 }
 
 .play-button:hover {
@@ -370,19 +370,19 @@ footer#bottom {
 	margin-bottom: 0;
 }
 section.content ul {
-    list-style: none;
-    padding:0;
-    margin:0 0 1.5em;
+	list-style: none;
+	padding:0;
+	margin:0 0 1.5em;
 }
 
 section.content ul:not(.items):not(.commentlist) li {
-    padding-left: 3em;
-    text-indent: -.7em;
+	padding-left: 3em;
+	text-indent: -.7em;
 }
 
 section.content ul:not(.items):not(.commentlist) li:before {
-    content: "• ";
-    color: #C38596; /* or whatever color you prefer */
+	content: "• ";
+	color: #C38596; /* or whatever color you prefer */
 }
 /*section.content ul {
 	list-style: circle inside;
@@ -551,6 +551,22 @@ ul.commentlist li {
 .remove-bottom {
 	margin-bottom: 0;
 }
+
+/*full width*/
+.full-width {
+	margin-top: 100vh;
+	display: inline-block;
+	position: relative;
+	width: 100vw;
+	background: #fff;
+	min-height: 100vh;
+}
+
+.lower {
+	top: inherit;
+}
+
+
 
 /* IE Overrides */
 	.ie .sidebar, .ie .main {

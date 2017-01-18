@@ -1,5 +1,5 @@
-Theme name:    Bushwick
-Description:   A theme. For Blogz and ting.
-Author name:   James Dinsdale
-Author site:   http://molovo.co.uk
+Theme name:    Eero
+Description:   Forked from James Dinsdale's theme 'Bushwick'.
+Author name:   Paul Hanaoka
+Author site:   http://paul.hanaoka.co
 License:       http://licence.visualidiot.com

@@ -17,22 +17,14 @@
 		</section>
 
 		<!--custom HTML section-->
-<?php $customPostHTML = article_custom_field('custom_post_html'); ?>
-<?php if(!empty($customPostHTML)): ?>
-	</div> <!--closes container div--> 
-</div> <!--closes main div-->
-		<div class="full-width">
-			<section class="grid 1of1">
-				<article>
-					<?php echo $customPostHTML; ?>
-				</article>
-			</section>	
-		</div>
-<div class="main lower"> <!--opens lower main div-->
-	<div class="container">	<!--opens container div-->
-<?php endif; ?>
+		<?php $customPostHTML = article_custom_field('custom_post_html'); ?>
+		<?php if(!empty($customPostHTML)): ?>
+		    <article class="Markdown custom">
+		    	<?php echo $customPostHTML; ?>
+		    </article>
+		<?php endif; ?>
 		
-		<?php if(comments_open()): ?>			
+		<?php if(comments_open()): ?>
 		<section class=" grid 1of1 content comments">
 
 			<?php if(has_comments()): ?>
@@ -83,4 +75,5 @@
 
 		</section>
 		<?php endif; ?>
+
 <?php theme_include('footer'); ?>

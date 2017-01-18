@@ -1,12 +1,11 @@
-# Bushwick
+# Eero
 
 ### A theme for Anchor CMS
 
-Bushwick is a lightweight, responsive blogging theme, designed to show beautiful content alongside beautiful imagery.
+Eero, forked from James Dinsdale's [Bushwick](http://github.com/molovo/bushwick), has a simpler menu and more robust article capabilities.
 
-View a sample at <http://bushwick.molovo.co.uk>, or grab the code from [Github](http://github.com/molovo/bushwick)
+View a sample at <http://eero.hanaoka.co>, or grab the code from [Github](http://github.com/plhnk/eero)
 
-<small>Contains custom extensions to Markdown syntax, to allow for the use of buttons and image alignment within the content. [Read more...](http://bushwick.molovo.co.uk/writing-guidelines)</small>
 
 ###### Additional meta fields required:
 Posts
