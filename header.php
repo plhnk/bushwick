@@ -100,7 +100,7 @@
 				title="' . latest_post()->data['title'] . '"
 				>Latest</a>';
 		?>
-		<style type="text/css">.sidebar { background-image: url(/images/backgrounds/<?php echo $selectedBg; ?>);} </style>
+		<style type="text/css">.sidebar { background-image: url(/content/images/backgrounds/<?php echo $selectedBg; ?>);} </style>
 	</head>
 
 	<body class="override">
@@ -110,10 +110,10 @@
 				<div class="grid 1of1 sidebar-content force-grid">
 					<?php if(article_title()): ?>
 						<h1 class="light"><?php echo article_title(); ?></h1>
-						<h5 class="light grid 3of4 stick-to-grid remove-padding">Posted by
+						<h6 class="light grid 3of4 stick-to-grid remove-padding">Posted by
 							<?php echo article_author('real_name'); ?> on 
 							<?php echo article_date(); ?>
-						</h5>
+						</h6>
 						<p class="grid 1of4 stick-to-grid remove-padding ralign article-links">
 							<a<?php echo (article_previous_url() ? ' href="' . article_previous_url() . '"' : ''); ?>>&larr;</a>
 							<a<?php echo (article_next_url() ? ' href="' . article_next_url() . '"' : ''); ?>>&rarr;</a>
@@ -131,7 +131,7 @@
 								<use xlink:href="#pp" class=""></use>
 							</svg>
 						</button>
-						<audio id="pronounciation"><source src="/audio/siri-says-eero.mp3">Please use a modern browser.</audio>
+						<audio id="pronounciation"><source src="/audio/siri-says-eero.ogg" type="audio/ogg"><source src="/audio/siri-says-eero.mp3" type="audio/mpeg">Please use a modern browser.</audio>
 						</h6>
 					<?php endif; ?>
 				</div>

@@ -1,10 +1,11 @@
 /*
 	# COLORS
 	Red: #b2160d
-	Pink: #C38596
 	Cream: #F9F7E8
 	Light Red: #F03F35
-	Blue: #B7E3E4
+	Light Blue: #B7E3E4
+	Grey: #7E7E7E;
+	Light Grey: #E7E7E7;
 */
 
 html, body {
@@ -42,6 +43,10 @@ h1, nav a, aside.tldr h3:before  {
 	font-weight: 900;
 }
 
+.main .container h1 {
+	margin-top: 20vh;
+}
+
 h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a,
 h1 > a:visited, h2 > a:visited, h3 > a:visited, h4 > a:visited, h5 > a:visited, h6 > a:visited,
 a > h1, a > h2, a > h3, a > h4, a > h5, a > h6,
@@ -54,7 +59,7 @@ hr {
 	margin: 3em 0;
 	height: 0px;
 	border: 0;
-	border-bottom: 1px solid rgba(51,71,61,0.1);
+	border-bottom: 1px solid #E7E7E7;
 }
 
 .sidebar, .main{
@@ -118,10 +123,18 @@ hr {
 }
 
 .sidebar-content {
+	font-size: 120%;
 	letter-spacing: -.4em;
 }
 .sidebar-content h1 {
 	letter-spacing: 0;
+	margin-bottom: .2em;
+}
+
+@media screen and (min-width: 1920px) {
+	.sidebar-content {
+		font-size: 200%;
+	}
 }
 
 section.content {
@@ -257,7 +270,7 @@ nav.menu-toggle a {
 aside.tldr h3 {
 	font-style: italic;
 	font-weight: 700;
-	padding-left: 2em;
+	padding-left: 2.1em;
 	position: relative;
 }
 	aside.tldr h3:before {
@@ -359,7 +372,7 @@ button {
 }
 
 footer#bottom {
-	border-top: 1px solid rgba(51,71,61,0.05);
+	border-top: 1px solid #E7E7E7;
 }
 
 .flex {
@@ -382,28 +395,23 @@ section.content ul:not(.items):not(.commentlist) li {
 
 section.content ul:not(.items):not(.commentlist) li:before {
 	content: "• ";
-	color: #C38596; /* or whatever color you prefer */
+	color: #C38596;
 }
-/*section.content ul {
-	list-style: circle inside;
-	list-style-color: #F03F35;
-}*/
 
 section.content ol {
+	font-family: "Work Sans", "Skolar", "Georgia", "Times New Roman", serif;
 	list-style: lower-roman outside;
 	list-style-color: #F03F35;
 	margin-left: 3em;
 }
 
 section.content ol li {
-	font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	color: #C38596;
 	font-size: .75em;
 	font-weight: 700;
 }
 
 section.content ol li > p {
-	font-family: "Work Sans", "Skolar", "Georgia", "Times New Roman", serif;
 	color: rgb(51,71,61);
 	font-size: 1rem;
 	font-weight: 400;
@@ -510,7 +518,7 @@ section.comments textarea {
 		padding: .75em;
 		font-size: .75em;
 		border-radius: 3px;
-		border: 1px solid rgba(51,71,61,0.1);
+		border: 1px solid #E7E7E7;
 		display: block;
 }
 section.comment textarea {
@@ -522,12 +530,12 @@ section.comments button[type="submit"] {
 }
 
 ul.commentlist {
-	border-top: 1px solid rgba(51,71,61,0.05);
+	border-top: 1px solid #E7E7E7;
 }
 
 ul.commentlist li {
 	padding: 1.5em 0;
-	border-bottom: 1px solid rgba(51,71,61,0.05);
+	border-bottom: 1px solid #E7E7E7;
 }
 
 .icon, a.icon, nav a.icon, .sidebar nav a.icon {
@@ -562,11 +570,149 @@ ul.commentlist li {
 	min-height: 100vh;
 }
 
+.full-width.container {
+	max-width: none;
+	padding: 20vmax 0;
+	text-align: center;
+}
+
+.full-width p {
+	margin: 10vmax 0 12vmax;
+}
+
+section.content {
+	max-width: none;
+}
+
 .lower {
 	top: inherit;
 }
 
+@media (max-width: 1024px) {
+	.full-width {
+		margin-top: 0;
+	}
 
+	.full-width.container {
+		padding: 0;
+	}
+
+	.main {
+		min-height: 50vmin;
+	}
+}
+
+/* Offsetting Gallery */
+
+article.gallery p:nth-child(4n+1) {
+	text-align: right;
+	margin-right: 4em;
+}
+
+article.gallery p:nth-child(5n+3) {
+	text-align: left;
+	margin-left: calc(10% + 2em);
+}
+
+article.gallery p:nth-child(6n) {
+	text-align: left;
+	margin-left: 2em;
+}
+
+@media screen and (max-width: 700px) {
+	article.gallery p:nth-child(n+0) {
+		text-align: center;
+		margin-left:0;
+		margin-right: 0;
+	}
+}
+
+/*homepage bubbles*/
+
+figure.image-wrapper.bubble img {
+	border-radius: 50%;
+	transition: all .3s cubic-bezier(.48,0,.48,1);
+	width: 100%;
+}
+
+.bubble {
+	position: relative;
+}
+
+figure.image-wrapper.bubble {
+	margin: 5em 0 7em;
+	width: 32%;
+}
+
+
+.shift-three {
+	transform: translateY(-20%);
+}
+
+.shift-two {
+	transform: translateY(40%) translateX(5%);
+}
+
+.bubble figcaption {
+	font-size: 4vmin;
+	position: absolute;
+	bottom: 40%;
+	right: 0px;
+	display: inline;
+	font-size: 4vmin;
+}
+
+.image-wrapper.bubble.grid figcaption {
+	text-align: right;
+	color: #7E7E7E;
+	top: -2em;
+	right: -25%;
+	left: initial;
+	background: #F9F7E8;
+	display: inline;
+	font-weight: 700;
+	font-size: calc(.5em + 3vmin);
+	box-shadow: .2em .1em #F9F7E8, -.2em 0 #F9F7E8;
+	position: relative;
+	padding: 0;
+	transition: all .3s ease-in-out;
+
+}
+
+figure.image-wrapper.bubble.grid.remove-padding:hover img {
+	transform: scale(1.2);
+	transition: all .3s cubic-bezier(.48,0,.48,1);
+}
+
+figure.image-wrapper.bubble.grid.remove-padding:hover figcaption {
+	top: -1.5em;
+	transition: all .3s ease-in-out;
+}
+
+@media screen and (max-width: 700px) {
+
+	figure.image-wrapper.bubble {
+		margin: 1em 0 .5em;
+		width: 80%;
+
+	}
+
+	.image-wrapper.bubble.grid figcaption {
+	top: -3em;
+	right: -15%;
+	font-size: 4vmax;
+	padding: 0;
+	}
+	
+	.shift-three {
+		transform: translateX(-20%);
+	}
+
+	.shift-two {
+		transform: translateY(0%) translateX(25%);
+	}
+
+}
 
 /* IE Overrides */
 	.ie .sidebar, .ie .main {

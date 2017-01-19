@@ -21,9 +21,9 @@
 <?php if(!empty($customPostHTML)): ?>
 	</div> <!--closes container div--> 
 </div> <!--closes main div-->
-		<div class="full-width">
-			<section class="grid 1of1">
-				<article>
+		<div class="full-width container">
+			<section class="grid 1of1 content">
+				<article class="gallery">
 					<?php echo $customPostHTML; ?>
 				</article>
 			</section>	

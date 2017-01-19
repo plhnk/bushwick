@@ -20,6 +20,14 @@ function pluralise($amount, $str, $alt = '') {
 	return intval($amount) === 1 ? $str : $str . ($alt !== '' ? $alt : 's');
 }
 
+/* Need to comment out in anchor/functions/articles */
+
+function article_date() {
+	if($created = Registry::prop('article', 'created')) {
+		return Date::format($created, 'j.m.Y');
+	}
+}
+
 function relative_time($date) {
 	if(is_numeric($date)) $date = '@' . $date;
 
@@ -53,14 +61,6 @@ function relative_time($date) {
 			return $rounded . ' ' . pluralise($rounded, $title) . ' ago';
 		}
 	}
-}
-
-function twitter_account() {
-	return site_meta('twitter', 'molovo');
-}
-
-function twitter_url() {
-	return 'https://twitter.com/' . twitter_account();
 }
 
 /*function latest_post($limit = 1) {
