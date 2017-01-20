@@ -16,23 +16,45 @@ html, body {
 }
 
 .light {
-	color: white;
+	color: #fff;
 	text-shadow: 0px .1em 2em rgba(0,0,0,0.2);
 }
 
 a, a:visited {
 	text-decoration: none;
+	transition: all .2s ease-in-out;
 }
 
-	*:not(nav) > a:hover {
- 
- 	}
-	*:not(.sidebar) > a:hover {
+a:hover {
 		color: #F03F35;
+		letter-spacing: .05em;
+		transition: all .2s ease-in-out;
 	}
-	a:not([href]) {
-		opacity: .1;
-	}
+
+/*
+.container .content a, footer a {
+	color: #7E7E7E;
+	position: relative;
+}	
+
+.container .content a:after, footer a:after {
+	content: '';
+	background: #7E7E7E;
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	height: .1em;
+}
+
+.container .content a:hover .container .content a:after, footer a:hover footer a:after {
+	background: #F03F35;
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	height: 1.2em;
+	top: 0;
+}
+*/
 
 h2, h3, h4, h5, h6 {
 	font-family: "Alegreya", "Georgia", "Times New Roman", serif;
@@ -126,10 +148,17 @@ hr {
 	font-size: 120%;
 	letter-spacing: -.4em;
 }
+
 .sidebar-content h1 {
 	letter-spacing: 0;
 	margin-bottom: .2em;
 }
+
+.sidebar-content h1 a {
+	color: #fff;
+}
+
+
 
 @media screen and (min-width: 1920px) {
 	.sidebar-content {
@@ -201,7 +230,7 @@ section.content {
 		border: 1px solid rgba(51,71,61,0.1);
 	}
 	#search button[type="submit"] {
-		background: #C38596;
+		background: #F03F35;
 	}
 	#search button[type="submit"]:hover {
 		background: #B7E3E4;
@@ -267,6 +296,12 @@ nav.menu-toggle a {
 	letter-spacing: -.4em !important;
 }
 
+.article-preview h3 a {
+	color: #7E7E7E;
+	font-weight: 700;
+
+}
+
 aside.tldr h3 {
 	font-style: italic;
 	font-weight: 700;
@@ -285,16 +320,18 @@ aside.tldr h3 {
 	}
 
 a.buttonlink, a[title="pdf"], a[title="file"], a[title="audio"], a[title="button"], button {
-	background: #F03F35;
+	background: #E7E7E7;
 	padding: .25em 1.5em .3em;
-	border-radius: 3px;
-	font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	border-radius: .1em;
+	font-family: "Work Sans", "Verdana", "Tahoma", sans-serif;
 	font-size: .75em;
-	color: white;
+	color: #7E7E7E;
 	margin: .75em 0;
 	display: inline-block;
 	border: 0;
-	font-weight: 400;
+	letter-spacing: 1px;
+	font-weight: 900;
+	text-transform: uppercase;
 	-webkit-transition: background .15s ease-in-out;
 		moz-transition: background .15s ease-in-out;
 		-ms-transition: background .15s ease-in-out;
@@ -311,16 +348,12 @@ a.readmore {
 	vertical-align: top;
 }
 
-a.readmore:hover {
-	background: #F03F35;
-}
-
 button {
 	height: auto;
 	padding: .75em 1.5em;
 }
-	a.buttonlink:hover, a[title="pdf"]:hover, a[title="file"]:hover, a[title="audio"]:hover, a[title="button"]:hover, button:hover {
-		background: #B7E3E4;
+	a.buttonlink:hover, a[title="pdf"]:hover, a[title="file"]:hover, a[title="audio"]:hover, a[title="button"]:hover, button:hover, a.readmore:hover {
+		background: #F03F35;
 		color: white;
 	}
 	a[title="pdf"], a[title="file"], a[title="audio"], section.comments button {
@@ -358,7 +391,7 @@ button {
 	height: 2em;
 	margin: 0;
 	padding: 0;
-	vertical-align: middle;
+	vertical-align: text-top;
 	width: 2em;
 }
 
@@ -389,13 +422,13 @@ section.content ul {
 }
 
 section.content ul:not(.items):not(.commentlist) li {
-	padding-left: 3em;
+	padding-left: 2em;
 	text-indent: -.7em;
 }
 
 section.content ul:not(.items):not(.commentlist) li:before {
 	content: "• ";
-	color: #C38596;
+	color: #F03F35;
 }
 
 section.content ol {
@@ -406,13 +439,13 @@ section.content ol {
 }
 
 section.content ol li {
-	color: #C38596;
+	color: #F03F35;
 	font-size: .75em;
 	font-weight: 700;
 }
 
 section.content ol li > p {
-	color: rgb(51,71,61);
+	color: #7E7E7E;
 	font-size: 1rem;
 	font-weight: 400;
 	margin-bottom: 0;
@@ -482,10 +515,10 @@ section.content .image-wrapper figcaption {
 }
 
 blockquote cite {
-	font-family: "Work Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-family: "Work Sans", "Verdana", sans-serif;
 	font-style: normal;
 	font-size: .75em;
-	color: rgb(51,71,61);
+	color: #7E7E7E;
 }
 
 blockquote cite:before {
@@ -502,7 +535,7 @@ pre {
 }
 code {
 	font-family: monospace;
-	border-bottom: rgba(255,255,255,0.1);
+	border-bottom: #E7E7E7;
 	font-size: .75em;
 }
 

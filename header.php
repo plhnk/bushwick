@@ -6,6 +6,15 @@
 ?>
 
 <!doctype html>
+<!                                 
+                                     
+   {__       {__    {_ {___   {__    
+ {_   {__  {_   {__  {__    {__  {__ 
+{_____ {__{_____ {__ {__   {__    {__
+{_        {_         {__    {__  {__ 
+  {____     {____   {___      {__    
+                                     
+>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -119,7 +128,7 @@
 							<a<?php echo (article_next_url() ? ' href="' . article_next_url() . '"' : ''); ?>>&rarr;</a>
 						</p>
 					<?php else: ?>
-						<h1 class="light" style="margin-bottom:0;">Eero</h1>
+						<h1 class="light" style="margin-bottom:0;"><a href="/" title="go home">Eero</a></h1>
 						<h6 class="light"><?php echo site_description(); ?>&nbsp;<button class="play-button" aria-live="assertive" tabindex="32" aria-label="Pause" onclick="play()">
 							<svg width="100%" height="100%" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<defs>

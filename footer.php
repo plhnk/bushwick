@@ -12,7 +12,7 @@
 	                <div class="grid 1of2 ralign">
 						<small>
 							<p>
-		                		Powered by <s><a href="http://anchorcms.com" target="_blank">Anchor CMS</a></s> <a href="http://liferay.com" target="_blank">Liferay DXP</a>
+		                		Powered by <s><a href="http://liferay.com" target="_blank">Liferay DXP</a></s> <a href="http://anchorcms.com" target="_blank">Anchor CMS</a>
 	                		</p>
 			            </small>
 	        		</div>
