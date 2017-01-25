@@ -6,7 +6,7 @@
 ?>
 
 <!doctype html>
-<!                                 
+<!                              
                                      
    {__       {__    {_ {___   {__    
  {_   {__  {_   {__  {__    {__  {__ 
@@ -109,11 +109,13 @@
 				title="' . latest_post()->data['title'] . '"
 				>Latest</a>';
 		?>
+
 		<style type="text/css">.sidebar { background-image: url(/content/images/backgrounds/<?php echo $selectedBg; ?>);} </style>
+
+
 	</head>
 
-	<body class="override">
-
+	<body class="override"><?php include_once("analytics.php") ?>
 		<div class="sidebar">
 			<div class="container">
 				<div class="grid 1of1 sidebar-content force-grid">
