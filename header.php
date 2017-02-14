@@ -29,14 +29,6 @@
 		<link rel="shortcut icon" href="<?php echo theme_url('img/favicon.png'); ?>">
 
 		<link href='http://fonts.googleapis.com/css?family=Alegreya:400,400i,700i,900,900i|Work+Sans:400,900' rel='stylesheet' type='text/css'>
-		<script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js"></script>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.7/assets/css/emojione.min.css"/>
-		<script type="text/javascript" >
-			function getAllParaElems() {
-				var elements = document.getElementByTagName("p");
-					elements.classList.add("convert-emoji")
-			}
-		</script>
 
 		<script>var base = '<?php echo theme_url(); ?>';</script>
 
@@ -64,8 +56,8 @@
 					background-image: url("<?php echo $img; ?>");
 				}
 			</style>
-		<?php elseif(is_article()): ?>
-		
+		<?php elseif ((is_article()) || (is_page())): ?>
+			<style type="text/css">.sidebar { background-image: url(/content/images/backgrounds/<?php echo $selectedBg; ?>);} </style>
 		<?php /*elseif (page_slug() == 'search'): ?>
 			<style>
 				.sidebar {
@@ -109,8 +101,6 @@
 				title="' . latest_post()->data['title'] . '"
 				>Latest</a>';
 		?>
-
-		<style type="text/css">.sidebar { background-image: url(/content/images/backgrounds/<?php echo $selectedBg; ?>);} </style>
 
 
 	</head>
