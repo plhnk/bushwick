@@ -536,13 +536,13 @@ code {
 	font-size: .75em;
 }
 
-section.comments label {
+label {
 	font-size: .75em;
 	font-weight: 700;
 }
 
-section.comments input,
-section.comments textarea {
+input,
+textarea {
 		width: 100%;
 		max-width: 18em;
 		padding: .75em;
@@ -551,11 +551,11 @@ section.comments textarea {
 		border: 1px solid #E7E7E7;
 		display: block;
 }
-section.comment textarea {
+textarea {
 	min-height: 9em;
 }
 
-section.comments button[type="submit"] {
+button[type="submit"] {
 	font-weight: 400;
 }
 
@@ -615,6 +615,7 @@ section.content {
 }
 
 .lower {
+	display: block;
 	top: inherit;
 }
 

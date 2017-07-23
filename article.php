@@ -62,17 +62,17 @@
 				<?php echo comment_form_notifications(); ?>
 
 				<p class="name">
-					<label for="name">Your name:</label>
-					<?php echo comment_form_input_name('placeholder="Your name"'); ?>
+					<label for="name">Your name</label>
+					<?php echo comment_form_input_name('placeholder="e.g. Anita Bath"'); ?>
 				</p>
 
 				<p class="email">
-					<label for="email">Your email address:</label>
+					<label for="email">Your email address</label>
 					<?php echo comment_form_input_email('placeholder="Your email won’t be published"'); ?>
 				</p>
 
 				<p class="textarea">
-					<label for="text">Your comment:</label>
+					<label for="text">Your comment</label>
 					<?php echo comment_form_input_text('placeholder="If you can&#8217;t say something nice..."'); ?>
 				</p>
 
