@@ -1,72 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <link rel="icon" type="image/png" href="favicon.ico">
   <meta charset="UTF-8">
-  <meta content="minimum-scale=1.0, width=device-width" name="viewport">
-  <title>My site is live!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="node_modules/popups/css/popupS.min.css">
+  <title>Hi!</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90676015-1"></script>
+  <script src="node_modules/popups/dist/popupS.min.js"></script>
+
+  <script>
+    function form() {
+      popupS.ajax({
+        title: 'Get A Magnet',
+        ajax: {
+          url: 'https://eero.hanaoka.co/forms/magnet-form.html'
+        }
+      });
+    }
+
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-90676015-1');
+
+  </script>
+
+  <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+  <script type="text/javascript">
+    require(["mojo/signup-forms/Loader"], function (L) {
+      L.start({
+        "baseUrl": "mc.us14.list-manage.com",
+        "uuid": "b7ffe8c424d611e3727183b09",
+        "lid": "dd573ffdc6"
+      })
+    })
+
+  </script>
   <style>
     body {
-      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-      -webkit-font-smoothing: antialiased;
+      background: #D0021B;
+      margin: 4px 0 0 0;
+      padding: 0;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
     }
-    .container {
-      left: 50%;
+
+    .hi {
+      overflow: hidden;
+      background: #fff;
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    .sticker {
+      height: 80%;
       position: absolute;
-      text-align: center;
-      top: 45%;
-      transform: translate(-50%, -50%);
-      width: 90%;
+      height: 80%;
+      width: 80vh;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
     }
-    h1 {
-      color: rgb(14,20,26);
-      font-size: 46px;
-      font-weight: 900;
-      letter-spacing: 0;
-      line-height: 60px;
-      margin: 6px 0 0;
+
+    svg.image {
+      height: 100%;
+      position: absolute;
     }
-    h2 {
-      color: rgba(14,20,26,.8);
-      font-size: 18px;
-      font-weight: 400;
-      letter-spacing: 0;
-      line-height: 30px;
-      margin: 12px 0 0;
+
+    .shadow {
+      fill: white;
+      -webkit-filter: drop-shadow(0px 1em 3em rgba(32, 7, 7, .2));
+      filter: drop-shadow(0px 1em 3em rgba(32, 7, 7, .2));
     }
+
+    @media screen and (max-width: 480px) {
+      svg.image {
+        height: 80%;
+      }
+      .speechHover {
+        width: 250px;
+        height: 240px;
+        margin-left: 40%;
+      }
+      h1 {
+        margin-left: 4rem;
+      }
+      .sticker {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
+      a {
+        align-self: flex-start;
+      }
+      .hi {
+        align-items: flex-start;
+        padding-top: 8px;
+      }
+    }
+
   </style>
+
 </head>
+
 <body>
-  <div class="container">
-    <svg width="270px" height="270px" viewBox="0 0 270 270" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
-    <title>illustration</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-      <path d="M90.0000035,91.9999367 C95.5000055,91.9999367 100.000007,87.4999509 100.000007,81.9999684 C100.000007,76.4999858 95.5000055,72 90.0000035,72 C84.5000016,72 80,76.4999858 80,81.9999684 C80,87.4999509 84.5000016,91.9999367 90.0000035,91.9999367 Z" id="path-1"></path>
-    </defs>
-    <g id="Workflow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-      <g id="01-page-sample" transform="translate(-585.000000, -156.000000)">
-        <g id="view-1">
-          <g id="illustration" transform="translate(585.000000, 156.000000)">
-            <circle id="circle-outer-2" fill-opacity="0.0599999987" fill="#00D46A" cx="135" cy="135" r="135"></circle>
-            <circle id="circle-outer-1" fill-opacity="0.1" fill="#00D46A" cx="135" cy="135" r="114"></circle>
-            <g id="icon" transform="translate(45.000000, 45.000000)">
-              <circle id="container" fill-opacity="0.2" fill="#00D46A" cx="90" cy="90" r="90"></circle>
-              <circle id="outline" stroke-opacity="0.08" stroke="#00D46A" stroke-width="30" cx="90" cy="90" r="75"></circle>
-              <path d="M123.562741,90.4376457 C124.437744,91.375149 125.000246,92.6251534 125.000246,94.0001583 L125.000246,114.000229 C125.000246,116.750238 122.750238,119.000246 120.000229,119.000246 C119.000225,119.000246 118.000222,118.687745 117.250219,118.187743 L117.187719,118.125243 L102.625167,108.437709 C101.000162,110.062715 100.687661,110.375216 98.5626532,112.562724 C97.6251499,113.437727 96.3751455,114.000229 95.0001407,114.000229 L85.0001055,114.000229 C83.6251007,114.000229 82.3750963,113.437727 81.437593,112.562724 C79.3125855,110.375216 79.0000844,110.062715 77.3750787,108.437709 L62.8125275,118.125243 L62.7500273,118.187743 C62.0000246,118.687745 61.0000211,119.000246 60.0000176,119.000246 C57.2500079,119.000246 55,116.750238 55,114.000229 L55,94.0001583 C55,92.6251534 55.562502,91.375149 56.4375051,90.4376457 C63.0000281,83.9376229 64.2500325,82.6876185 70.0000528,76.9375982 L70.0000528,74.0000879 C70.0000528,68.625069 72.1250602,63.7500519 75.5625723,60.1250391 C80.0625881,55.1250215 80.1250884,55.0000211 82.5625969,52.3125116 C84.3751033,50.2500044 87.0626128,49 90.0001231,49 C92.9376334,49 95.6251429,50.2500044 97.4376492,52.3125116 C99.8751578,55.0000211 99.937658,55.1250215 104.437674,60.1250391 C107.875186,63.7500519 110.000193,68.625069 110.000193,74.0000879 L110.000193,76.9375982 C115.750214,82.6876185 117.000218,83.9376229 123.562741,90.4376457 Z" id="rocket" fill="#00D46A"></path>
-              <g id="window" fill="#FFFFFF">
-                <use xlink:href="#path-1"></use>
-                <use xlink:href="#path-1"></use>
-              </g>
-              <rect id="line" fill="#FFFFFF" x="86" y="114" width="8" height="111"></rect>
-            </g>
-          </g>
-        </g>
-      </g>
-  </g>
-  </svg>
-    <h1>My site is live!</h1>
-    <h2>Wow, that was easy.</h2>
+  <div class="hi">
+    <div class="sticker" data-tilt>
+      <svg class="image shadow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+        <defs>
+          <clipPath id="eeroHead" clipPathUnits="objectBoundingBox">
+            <path d="M.82476.53706A.24153.24153,0,0,1,.84137.4925.727.727,0,0,0,.86328.39733.2205.2205,0,0,0,.8527.30669.31524.31524,0,0,0,.69862.10124a.28226.28226,0,0,0-.08535-.043C.60992.04477.60836.041.605.04082.5937.04077.57635.04646.57323.0461L.54227.03251A.29646.29646,0,0,0,.42066,0L.41311.00758A.02246.02246,0,0,0,.41329.02163.02839.02839,0,0,0,.426.03326L.37761.04686A.40791.40791,0,0,0,.2915.08991a.36191.36191,0,0,0-.148.22358A.34688.34688,0,0,0,.13968.44416a.6041.6041,0,0,0,.03021.102A.06249.06249,0,0,0,.14723.61788.39476.39476,0,0,0,.1714.673C.18568.71279.17969.77059.23334.77045a.14718.14718,0,0,0,.01433.042L.24737.81257A.015.015,0,0,0,.24166.833L.25544.856.25869.86127A.37372.37372,0,0,0,.34832.96166L.35741.96474A.015.015,0,0,0,.36935.95884L.36975.95826a.21754.21754,0,0,0,.211.02519A.32033.32033,0,0,0,.74771.843.249.249,0,0,0,.76886.79311L.77415.77121.78472.7697A.03529.03529,0,0,0,.80285.75686.29968.29968,0,0,0,.83458.67226.57184.57184,0,0,0,.861.61637C.87108.58023.85594.53944.82476.53706Z"
+            />
+          </clipPath>
+        </defs>
+        <path d="M659.8968,429.6472c1.6513-13.4875,9.4922-23.5538,13.2938-35.6509,7.6-24.1856,12.8707-49.1245,17.5231-76.1359,4.5441-26.381-3.5964-53.0385-8.46-72.5105-20.1406-80.6471-61.9-125.8313-123.2678-164.3571C541.3571,69.9252,513.36,50.41,490.7057,46.55c-2.6732-10.7362-3.9259-13.74-6.6467-13.8979-9.006-.0345-22.8833,4.5124-25.3787,4.23L433.9058,26.0057C405.6207,14.4034,374.6246-.6644,336.621.0227c-2.6541-.0227-4.99,3.0438-6.0424,6.0427-.68,3.1037-1.5842,7.6241.1487,11.2405,2.5033,3.4558,5.6041,7.8554,10.1236,9.3041q-19.3342,5.4375-38.6724,10.8764c-24.34,9.4891-48.8186,20.2995-68.8848,34.4425C174.739,113.2,133.9813,169.718,114.86,250.7882c-6.44,27.3061-9.7439,73.9318-3.0213,104.536,6.9693,31.7266,13.6962,55.604,24.17,81.5741-16.3392,8.3588-23.9011,31.1511-18.1275,57.4043,3.9418,17.9232,13.7926,28.6657,19.3362,44.1105,11.42,31.8171,6.6317,78.0544,49.5489,77.9486,1.87,11.7425,6.2078,22.9994,11.4639,33.5671-.08.043-.1633.0763-.2431.1213a12,12,0,0,0-4.5625,16.3457c3.6728,6.5176,7.4082,12.5586,11.02,18.4q1.3242,2.1415,2.6016,4.2168c13.4956,21.97,36.8906,53.7373,71.7031,80.3145a11.998,11.998,0,0,0,16.82-2.2559c.1161-.1521.2134-.3122.3212-.468,45.0131,30.7,102.6214,46.2641,168.8321,20.1578,59.6145-23.5056,102.7828-59.8022,133.54-112.3914,6.9173-11.8265,12.6044-26.1316,16.9193-39.8806q2.1144-8.7609,4.23-17.5234c2.0987-1.8019,4.9341-.4368,8.46-1.2084,5.82-1.2743,11.339-6.2016,14.5022-10.2723,15.4454-19.8764,15.4944-41.8432,25.3786-67.6766,5.9095-15.4455,16.3162-27.3708,21.1488-44.7148C696.9579,464.18,684.8437,431.5527,659.8968,429.6472Z"
+        />
+        <image clip-path="url(#eeroHead)" x="0" y="0" width="800" height="800" xlink:href="assets/images/eero-is-18m-opt.jpg" />
+      </svg>
+      <svg class="image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" style="transform: translateZ(5px); ">
+        <path id="textPath" fill="transparent" d="M203.8787,660.5044a517.4823,517.4823,0,0,0,33.4238,50.9018c15.5752,20.6765,36.8349,39.4116,48.7287,48.3834"
+        />
+        <text lengthAdjust="spacing" style="font-family: 'Work Sans', sans-serif; fill: #D0021B; font-weight: 600; transform:translate(-5px,2px);">
+          <textPath xlink:href="#textPath">
+            eero.hanaoka.co
+          </textPath>
+        </text>
+      </svg>
+      <a class="" href="mailto:eero@hanaoka.co?subject=Send%20me%20a%20magnet%20please!&amp;body=Please%20send%20my%20limited%20edition%20magnet%20to%3A%0A%0A%5Badd%20your%20mailing%20address%5D">
+        <!-- <div class="speechHover" onclick="form();"> -->
+        <div class="speechHover">
+          <h1>Want a magnet?</h1>
+          <p>
+            <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 20l6-8-6-8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>Email me!</p>
+        </div>
+      </a>
+    </div>
   </div>
+  <script type="text/javascript" src="node_modules/vanilla-tilt/dist/vanilla-tilt.min.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,116 @@
+.speechHover {
+  color: white;
+  width: 40%;
+  height: 38%;
+  background-image: url(assets/svg/speech.svg);
+  background-size: cover;
+  -webkit-transform: rotate(15deg) scale(.95) translateZ(30px);
+  transform: rotate(15deg) scale(.95) translateZ(30px);
+  margin-left: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-clip-path: ellipse(3% 0% at 50% 50%);
+  clip-path: ellipse(3% 0% at 50% 50%);
+  opacity: 0;
+  -webkit-transition: color .3s, opacity .4s ease-in-out .1s, -webkit-clip-path .4s ease-in-out, -webkit-transform .5s ease;
+  transition: color .3s, opacity .4s ease-in-out .1s, -webkit-clip-path .4s ease-in-out, -webkit-transform .5s ease;
+  transition: color .3s, opacity .4s ease-in-out .1s, clip-path .4s ease-in-out, transform .5s ease;
+  transition: color .3s, opacity .4s ease-in-out .1s, clip-path .4s ease-in-out, transform .5s ease, -webkit-clip-path .4s ease-in-out, -webkit-transform .5s ease;
+}
+
+.speechHover p {
+  margin-left: 2.85rem;
+  position: relative;
+}
+
+.speechHover:hover p {
+  -webkit-transition: color .3s;
+  transition: color .3s;
+  color: #D0021B;
+}
+
+.speechHover p:before {
+  content: '';
+  width: 0ch;
+  height: 2rem;
+  top: -0.3rem;
+  left: 1ch;
+  background: #fff;
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+  border-radius: 0.5rem;
+  -webkit-transition: opacity .2s ease, width .3s ease-in-out;
+  transition: opacity .2s ease, width .3s ease-in-out;
+}
+
+.speechHover:hover p:before {
+  content: '';
+  width: 11ch;
+  opacity: 1;
+  -webkit-transition: opacity .2s ease, width .3s ease-in-out .2s;
+  transition: opacity .2s ease, width .3s ease-in-out .2s;
+}
+
+h1 {
+  margin: 0 0 0 3.8rem;
+  width: 60%;
+}
+
+.arrow {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  vertical-align: bottom;
+  fill: none;
+  display: inline-block;
+  stroke: #fff;
+  stroke-width: 4;
+  opacity: .8;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.speechHover:hover .arrow {
+  -webkit-transform: translateX(9.5ch);
+  transform: translateX(9.5ch);
+  stroke: #D0021B;
+  stroke-width: 3;
+  opacity: 1;
+  -webkit-transition: stroke .4s, -webkit-transform .3s ease-in-out;
+  transition: stroke .4s, -webkit-transform .3s ease-in-out;
+  transition: stroke .4s, transform .3s ease-in-out;
+  transition: stroke .4s, transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sticker:hover .speechHover {
+  -webkit-clip-path: ellipse(80% 60% at 50% 50%);
+  clip-path: ellipse(80% 60% at 50% 50%);
+  opacity: 1;
+  -webkit-transition: opacity .3s ease-in-out .1s, -webkit-clip-path .3s ease-in-out, -webkit-transform .4s ease;
+  transition: opacity .3s ease-in-out .1s, -webkit-clip-path .3s ease-in-out, -webkit-transform .4s ease;
+  transition: opacity .3s ease-in-out .1s, clip-path .3s ease-in-out, transform .4s ease;
+  transition: opacity .3s ease-in-out .1s, clip-path .3s ease-in-out, transform .4s ease, -webkit-clip-path .3s ease-in-out, -webkit-transform .4s ease;
+}
+
+.speechHover:hover {
+  -webkit-transform: rotate(18deg) scale(1) translateZ(30px);
+  transform: rotate(18deg) scale(1) translateZ(30px);
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
